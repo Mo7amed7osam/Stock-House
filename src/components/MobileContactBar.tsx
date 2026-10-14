@@ -14,7 +14,16 @@ function BranchSheet({
   id: string;
   title: string;
   dialog: ReturnType<typeof useDialog>;
-  items: { key: string; label: string; detail: string; href: string; ariaLabel: string; external?: boolean }[];
+  items: {
+    key: string;
+    label: string;
+    detail: string;
+    /** Detail is a Latin/LTR run (phone number) rather than Arabic text. */
+    latinDetail?: boolean;
+    href: string;
+    ariaLabel: string;
+    external?: boolean;
+  }[];
 }) {
   const titleId = `${id}-title`;
   return (
@@ -49,9 +58,13 @@ function BranchSheet({
                 className="flex min-h-16 flex-col justify-center border border-navy/15 px-5 py-3 transition-colors hover:border-navy"
               >
                 <span className="font-bold">{item.label}</span>
-                <span dir="ltr" className="font-latin mt-0.5 text-right text-sm text-navy/70">
-                  {item.detail}
-                </span>
+                {item.latinDetail ? (
+                  <span dir="ltr" className="font-latin mt-0.5 text-right text-sm text-navy/70">
+                    {item.detail}
+                  </span>
+                ) : (
+                  <span className="mt-0.5 text-sm leading-snug text-navy/70">{item.detail}</span>
+                )}
               </a>
             </li>
           ))}
@@ -120,6 +133,7 @@ export function MobileContactBar() {
           key: b.id,
           label: b.name,
           detail: b.phoneDisplay,
+          latinDetail: true,
           href: b.phoneHref,
           ariaLabel: `الاتصال ب${b.ariaName}`,
         }))}
