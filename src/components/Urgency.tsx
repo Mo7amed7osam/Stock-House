@@ -19,10 +19,9 @@ export function Urgency() {
 
       <Reveal className="relative mx-auto grid max-w-[90rem] gap-10 px-5 sm:px-8 lg:grid-cols-12 lg:items-end lg:px-12">
         <div className="lg:col-span-8">
-          <span aria-hidden="true" className="block h-1 w-12 bg-navy" />
           <h2
             id="urgency-title"
-            className="mt-7 text-5xl leading-[1.05] font-bold tracking-tight sm:text-6xl lg:text-[5.5rem]"
+            className="text-5xl leading-[1.05] font-bold tracking-tight sm:text-6xl lg:text-[5.5rem]"
           >
             <span className="block">شوفت قطعة عجبتك؟</span>
             <span className="block">متستناش.</span>

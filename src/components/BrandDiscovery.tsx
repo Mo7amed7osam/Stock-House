@@ -38,7 +38,7 @@ export function BrandDiscovery() {
       <Reveal className="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
-            <SectionLabel tone="light">BIG BRANDS. SMART PRICES.</SectionLabel>
+            <SectionLabel index="02" tone="light">BIG BRANDS. SMART PRICES.</SectionLabel>
             <h2 id="brands-title" className="mt-5 text-4xl leading-tight font-bold sm:text-5xl lg:text-6xl">
               <span className="block">براندات تعرفها.</span>
               <span className="block">وقطع تستاهل تكتشفها.</span>
@@ -50,13 +50,20 @@ export function BrandDiscovery() {
         </div>
       </Reveal>
 
-      {/* Full-bleed marquee. LTR track so the translateX math is predictable. */}
+      {/*
+        Full-bleed marquee. The wrapper itself must be LTR: inside the RTL page an
+        over-wide track is anchored to the right edge and overflows left, so the
+        translateX(-50%) loop would drag the only visible copy off-screen and show
+        empty space for the rest of each cycle. LTR anchors the track at x=0 so the
+        two copies hand off seamlessly.
+      */}
       <div
-        className="marquee mt-14 border-y border-white/15 py-8 sm:mt-16 sm:py-10"
+        dir="ltr"
+        className="marquee mt-14 overflow-hidden border-y border-white/15 py-8 sm:mt-16 sm:py-10"
         aria-label="أمثلة لبراندات ممكن تلاقيها"
         role="region"
       >
-        <div dir="ltr" className="marquee-track flex w-max">
+        <div className="marquee-track flex w-max">
           <BrandRow />
           <BrandRow hidden />
         </div>

@@ -15,14 +15,14 @@ export function Branches() {
       <div className="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
         <Reveal className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
-            <SectionLabel>FIND YOUR BRANCH</SectionLabel>
+            <SectionLabel index="04">FIND YOUR BRANCH</SectionLabel>
             <h2 id="branches-title" className="mt-5 text-4xl leading-tight font-bold sm:text-5xl lg:text-6xl">
               اختار أقرب فرع وابدأ رحلة البحث.
             </h2>
           </div>
 
           {/* Single source for hours on the page; both branches share them. */}
-          <div id="hours" className="border-s-2 border-gold ps-5 lg:col-span-5">
+          <div id="hours" className="rounded-xs border border-navy/15 bg-white p-5 sm:p-6 lg:col-span-5">
             <h3 className="flex items-center gap-2 text-sm font-bold">
               <ClockIcon width={18} height={18} />
               مواعيد العمل — الفرعين

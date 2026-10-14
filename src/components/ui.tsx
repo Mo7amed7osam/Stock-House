@@ -16,21 +16,27 @@ export function Latin({
   );
 }
 
+/** Section eyebrow: a two-digit index in gold, then the label. */
 export function SectionLabel({
   children,
+  index,
   tone = "dark",
 }: {
   children: ReactNode;
+  index: string;
   tone?: "dark" | "light";
 }) {
   return (
     <p
-      className={`flex items-center gap-3 text-xs font-bold tracking-[0.22em] ${
+      className={`text-xs font-bold tracking-[0.22em] ${
         tone === "light" ? "text-gold" : "text-navy"
       }`}
     >
-      <span aria-hidden="true" className="h-px w-8 shrink-0 bg-gold" />
-      <Latin>{children}</Latin>
+      <Latin>
+        <span className="text-gold">{index}</span>
+        <span aria-hidden="true" className="mx-2 opacity-40">/</span>
+        {children}
+      </Latin>
     </p>
   );
 }

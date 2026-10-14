@@ -16,7 +16,7 @@ export function HowItWorks() {
     >
       <div className="mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12">
         <Reveal>
-          <SectionLabel>HOW IT WORKS</SectionLabel>
+          <SectionLabel index="03">HOW IT WORKS</SectionLabel>
           <h2 id="how-title" className="mt-5 text-4xl leading-tight font-bold sm:text-5xl lg:text-6xl">
             اختيارك أسهل. والسعر أذكى.
           </h2>
@@ -29,8 +29,7 @@ export function HowItWorks() {
               <Latin className="block text-right text-[4.5rem] leading-none font-extrabold tracking-tight text-navy sm:text-[5.5rem]">
                 {step.n}
               </Latin>
-              <span aria-hidden="true" className="mt-5 block h-1 w-10 bg-gold" />
-              <h3 className="mt-5 text-2xl font-bold">{step.title}</h3>
+              <h3 className="mt-6 text-2xl font-bold">{step.title}</h3>
               <p className="mt-2 max-w-xs text-lg leading-relaxed text-navy/75">
                 {step.body}
               </p>
@@ -39,7 +38,7 @@ export function HowItWorks() {
         </ol>
         </Reveal>
 
-        <p className="mt-12 border-s-2 border-gold ps-4 text-base font-medium text-navy md:mt-16">
+        <p className="mt-12 max-w-md border-t-2 border-navy pt-4 text-base font-medium text-navy md:mt-16">
           السعر النهائي بيتحدد حسب وزن القطع المختارة.
         </p>
       </div>

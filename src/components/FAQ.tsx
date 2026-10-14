@@ -42,7 +42,7 @@ export function FAQ() {
     <section id="faq" aria-labelledby="faq-title" className="bg-white py-20 sm:py-28">
       <Reveal className="mx-auto grid max-w-[90rem] gap-10 px-5 sm:px-8 lg:grid-cols-12 lg:px-12">
         <div className="lg:col-span-4">
-          <SectionLabel>FAQ</SectionLabel>
+          <SectionLabel index="05">FAQ</SectionLabel>
           <h2 id="faq-title" className="mt-5 text-4xl leading-tight font-bold sm:text-5xl">
             الأسئلة الشائعة
           </h2>

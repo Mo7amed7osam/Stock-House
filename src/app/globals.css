@@ -54,6 +54,49 @@ html:has(dialog[open]) {
   overflow: hidden;
 }
 
+/* ---------- Scrollbar ---------- */
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-navy) var(--color-cream);
+}
+
+/* Chromium / Safari */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy);
+  border: 2px solid var(--color-cream);
+  border-radius: var(--radius-xs);
+}
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background: var(--color-gold);
+}
+::-webkit-scrollbar-corner {
+  background: var(--color-cream);
+}
+
+/* Inner scroll areas on dark surfaces */
+.on-dark {
+  scrollbar-color: var(--color-gold) var(--color-navy);
+}
+.on-dark ::-webkit-scrollbar-track,
+.on-dark::-webkit-scrollbar-track {
+  background: var(--color-navy);
+}
+.on-dark ::-webkit-scrollbar-thumb,
+.on-dark::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-color: var(--color-navy);
+}
+
 /* Dark surfaces switch the focus ring to gold for contrast */
 .on-dark {
   --focus: var(--color-gold);

@@ -13,8 +13,7 @@ export function Hero() {
       <div className="grid lg:min-h-[min(54rem,calc(100svh-var(--header-h)))] lg:grid-cols-12">
         {/* Copy: start side (right in RTL) */}
         <div className="order-2 flex flex-col justify-center px-5 pt-10 pb-14 sm:px-8 lg:order-1 lg:col-span-6 lg:py-20 xl:col-span-5 lg:ps-[max(3rem,calc((100vw-90rem)/2+3rem))] lg:pe-10">
-          <p className="mb-7 flex items-center gap-3 text-[0.7rem] font-bold tracking-[0.14em] whitespace-nowrap text-gold sm:text-xs sm:tracking-[0.24em]">
-            <span aria-hidden="true" className="h-px w-8 shrink-0 bg-gold" />
+          <p className="mb-7 text-[0.7rem] font-bold tracking-[0.14em] whitespace-nowrap text-gold sm:text-xs sm:tracking-[0.24em]">
             <Latin>STOCK HOUSE / FASHION DISCOVERY</Latin>
           </p>
 

@@ -14,7 +14,6 @@ export function BranchCard({ branch, index }: { branch: Branch; index: number })
         <Latin className="text-xs font-bold tracking-[0.22em] text-navy/70">
           BRANCH {String(index + 1).padStart(2, "0")}
         </Latin>
-        <span aria-hidden="true" className="h-2 w-8 bg-gold" />
       </div>
 
       <div className="flex flex-1 flex-col p-6 sm:p-8">
