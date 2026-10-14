@@ -2,7 +2,7 @@ import { Reveal } from "./Reveal";
 import { Latin, SectionLabel } from "./ui";
 
 /** Brand names as text only — no third-party logos. */
-const brands = ["Adidas", "Zara", "H&M", "Pull&Bear", "Mango", "Levi’s", "AND MORE"] as const;
+const brands = ["Adidas", "Zara", "H&M", "Pull&Bear", "Lacoste", "Levi’s", "AND MORE"] as const;
 
 function BrandRow({ hidden = false }: { hidden?: boolean }) {
   return (
