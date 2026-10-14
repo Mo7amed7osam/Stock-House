@@ -4,32 +4,10 @@ import { ArrowIcon } from "./icons";
 import { Reveal } from "./Reveal";
 import { ButtonLink, SectionLabel, externalLinkProps } from "./ui";
 
-/** All three crops come from the single supplied editorial photo. */
 const categories: readonly Category[] = [
-  {
-    id: "men",
-    ar: "رجالي",
-    en: "MEN",
-    alt: "شاب بيتفرج على القطع المعروضة في STOCK HOUSE",
-    focal: "53% 30%",
-    zoom: 1.85,
-  },
-  {
-    id: "women",
-    ar: "حريمي",
-    en: "WOMEN",
-    alt: "بنت ماسكة قميص أبيض وبتختار من القطع",
-    focal: "27% 34%",
-    zoom: 1.6,
-  },
-  {
-    id: "kids",
-    ar: "أطفال",
-    en: "KIDS",
-    alt: "راك قطع ملونة ومكوية على شماعات",
-    focal: "97% 30%",
-    zoom: 1.45,
-  },
+  { id: "men", ar: "رجالي", en: "MEN", items: "تيشيرتات · قمصان · جينز · جواكت", tone: "navy" },
+  { id: "women", ar: "حريمي", en: "WOMEN", items: "بلوزات · فساتين · جينز · جواكت", tone: "gold" },
+  { id: "kids", ar: "أطفال", en: "KIDS", items: "أطقم · تيشيرتات · بناطيل", tone: "white" },
 ];
 
 export function NewDrops() {

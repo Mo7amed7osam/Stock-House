@@ -14,7 +14,10 @@ export function Reveal({
 }: {
   children: ReactNode;
   className?: string;
-  /** Animate direct children one after another instead of the wrapper. */
+  /**
+   * Animate the items of the single list/grid inside the wrapper one after
+   * another (grandchildren), instead of the wrapper as a block.
+   */
   stagger?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);

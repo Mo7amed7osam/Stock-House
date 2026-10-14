@@ -93,22 +93,23 @@ summary::-webkit-details-marker {
 /* ---------- Motion ---------- */
 
 /* Scroll reveal (state set from JS, see components/Reveal.tsx) */
+/* Stagger targets the items of the single list/grid the wrapper contains. */
 .reveal,
-.reveal-stagger > * {
+.reveal-stagger > * > * {
   transition:
     opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
     translate 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .reveal[data-reveal="hidden"],
-.reveal-stagger[data-reveal="hidden"] > * {
+.reveal-stagger[data-reveal="hidden"] > * > * {
   opacity: 0;
   translate: 0 1.5rem;
 }
-.reveal-stagger > :nth-child(2) { transition-delay: 90ms; }
-.reveal-stagger > :nth-child(3) { transition-delay: 180ms; }
-.reveal-stagger > :nth-child(4) { transition-delay: 270ms; }
-.reveal-stagger > :nth-child(5) { transition-delay: 360ms; }
-.reveal-stagger > :nth-child(n + 6) { transition-delay: 450ms; }
+.reveal-stagger > * > :nth-child(2) { transition-delay: 90ms; }
+.reveal-stagger > * > :nth-child(3) { transition-delay: 180ms; }
+.reveal-stagger > * > :nth-child(4) { transition-delay: 270ms; }
+.reveal-stagger > * > :nth-child(5) { transition-delay: 360ms; }
+.reveal-stagger > * > :nth-child(n + 6) { transition-delay: 450ms; }
 
 /* Brand marquee: two identical copies, track slides by exactly one copy */
 @keyframes marquee {
@@ -122,4 +123,19 @@ summary::-webkit-details-marker {
 .marquee:hover .marquee-track,
 .marquee:focus-within .marquee-track {
   animation-play-state: paused;
+}
+/* Reduced motion: show every brand once, statically, instead of a frozen track */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    width: 100%;
+    padding-inline: 1.25rem;
+  }
+  .marquee-track > ul {
+    flex-wrap: wrap;
+    row-gap: 1rem;
+  }
+  .marquee-track > [aria-hidden="true"] {
+    display: none;
+  }
 }

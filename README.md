@@ -27,6 +27,6 @@ npm run build && npm start
 ## Notes
 
 - Fonts: Neue Montreal / Neue Haas Grotesk / Helvetica Neue are referenced first in the Latin stack but not bundled (licensing). Manrope (Latin) and IBM Plex Sans Arabic load via `next/font`.
-- Category cards (MEN / WOMEN / KIDS) are three crops of the single supplied editorial photo (`focal`/`zoom` per card in `NewDrops.tsx`). Swap in dedicated photography per category when available; the KIDS crop currently shows the clothing rack.
+- Category cards (MEN / WOMEN / KIDS) are typographic by design (tone + ghost number + wordmark). The `items` line per card lives in `NewDrops.tsx`.
 - Scroll reveals (`components/Reveal.tsx`) and the brand marquee are CSS-driven and respect `prefers-reduced-motion`.
 - Brand names are text only — no third-party logos.
