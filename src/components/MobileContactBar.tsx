@@ -66,6 +66,7 @@ const barButton =
 
 export function MobileContactBar() {
   const call = useDialog();
+  const location = useDialog();
   const whatsapp = useDialog();
 
   return (
@@ -86,10 +87,17 @@ export function MobileContactBar() {
             <PhoneIcon width={20} height={20} />
             اتصال
           </button>
-          <a href="#branches" className={barButton}>
+          <button
+            type="button"
+            onClick={location.open}
+            aria-haspopup="dialog"
+            aria-expanded={location.isOpen}
+            aria-controls="location-sheet"
+            className={barButton}
+          >
             <PinIcon width={20} height={20} />
             الفروع
-          </a>
+          </button>
           <button
             type="button"
             onClick={whatsapp.open}
@@ -114,6 +122,19 @@ export function MobileContactBar() {
           detail: b.phoneDisplay,
           href: b.phoneHref,
           ariaLabel: `الاتصال ب${b.ariaName}`,
+        }))}
+      />
+      <BranchSheet
+        id="location-sheet"
+        title="اختار الفرع على الخريطة"
+        dialog={location}
+        items={branches.map((b) => ({
+          key: b.id,
+          label: b.name,
+          detail: b.address,
+          href: b.mapUrl,
+          ariaLabel: `فتح موقع ${b.ariaName} على خرائط جوجل`,
+          external: true,
         }))}
       />
       <BranchSheet
