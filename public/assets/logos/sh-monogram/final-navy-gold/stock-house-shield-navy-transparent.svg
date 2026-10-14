@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">STOCK HOUSE SH shield navy mark</title>
+  <desc id="desc">A one-color midnight navy SH shield monogram on transparency.</desc>
+  <defs>
+    <path id="h" d="M128 86H230V214H282V86H384V426H282V298H230V426H128Z"/>
+    <path id="s" d="M338 148H214L178 184V228H326L354 256V318L326 350H174"/>
+    <mask id="cut"><rect width="512" height="512" fill="#000"/><use href="#h" fill="#fff"/><use href="#s" fill="none" stroke="#000" stroke-width="42" stroke-linecap="square" stroke-linejoin="miter"/></mask>
+  </defs>
+  <path d="M132 44H380Q418 44 442 75L467 108Q482 128 482 158V344Q482 382 449 403L282 500Q256 514 230 500L63 403Q30 382 30 344V158Q30 128 45 108L70 75Q94 44 132 44Z" fill="none" stroke="#08132B" stroke-width="28" stroke-linejoin="round"/>
+  <g transform="translate(56 56) scale(.78)"><use href="#h" fill="#08132B" mask="url(#cut)"/></g>
+</svg>

@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #08132b;
+  --color-gold: #d6aa32;
+  --color-cream: #f5f1e8;
+  --color-white: #ffffff;
+  --color-stone: #a9a69f;
+
+  --font-arabic: var(--font-plex-arabic), "IBM Plex Sans Arabic", "Noto Sans Arabic", system-ui, sans-serif;
+  --font-latin: "Neue Montreal", "Neue Haas Grotesk Display", "Neue Haas Grotesk", "Helvetica Neue", var(--font-manrope), Arial, sans-serif;
+
+  --radius-xs: 2px;
+}
+
+:root {
+  --header-h: 4rem;
+  --bar-h: 4rem;
+  --focus: var(--color-navy);
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --header-h: 5rem;
+  }
+}
+
+html {
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-navy);
+  font-family: var(--font-arabic);
+  text-rendering: optimizeLegibility;
+}
+
+/* Keep page content clear of the sticky mobile contact bar */
+@media (max-width: 47.99rem) {
+  body {
+    padding-bottom: calc(var(--bar-h) + env(safe-area-inset-bottom));
+  }
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+/* Dark surfaces switch the focus ring to gold for contrast */
+.on-dark {
+  --focus: var(--color-gold);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+dialog::backdrop {
+  background: rgb(8 19 43 / 0.72);
+}
+
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ---------- Motion ---------- */
+
+/* Scroll reveal (state set from JS, see components/Reveal.tsx) */
+.reveal,
+.reveal-stagger > * {
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    translate 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal[data-reveal="hidden"],
+.reveal-stagger[data-reveal="hidden"] > * {
+  opacity: 0;
+  translate: 0 1.5rem;
+}
+.reveal-stagger > :nth-child(2) { transition-delay: 90ms; }
+.reveal-stagger > :nth-child(3) { transition-delay: 180ms; }
+.reveal-stagger > :nth-child(4) { transition-delay: 270ms; }
+.reveal-stagger > :nth-child(5) { transition-delay: 360ms; }
+.reveal-stagger > :nth-child(n + 6) { transition-delay: 450ms; }
+
+/* Brand marquee: two identical copies, track slides by exactly one copy */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 38s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
