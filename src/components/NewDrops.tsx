@@ -19,7 +19,7 @@ export function NewDrops() {
           </div>
           <div className="lg:col-span-5">
             <p className="max-w-md text-lg leading-relaxed text-navy/75">
-              كولكشن جديد بينزل باستمرار، والقطع المتاحة بتتغير من كولكشن للتاني.
+              كوليكشن جديد بينزل باستمرار، والقطع المتاحة بتتغير من كوليكشن للتاني.
             </p>
             <div className="mt-6">
               {follow ? (

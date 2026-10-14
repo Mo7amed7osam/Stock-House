@@ -128,7 +128,7 @@ export type NavItem = { href: string; label: string };
 
 export const navItems: readonly NavItem[] = [
   { href: "#home", label: "الرئيسية" },
-  { href: "#new-drop", label: "كولكشن جديد" },
+  { href: "#new-drop", label: "كوليكشن جديد" },
   { href: "#how-it-works", label: "إزاي بيشتغل؟" },
   { href: "#branches", label: "الفروع" },
   { href: "#faq", label: "الأسئلة الشائعة" },
