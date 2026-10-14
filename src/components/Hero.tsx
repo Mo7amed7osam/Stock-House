@@ -26,7 +26,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-md text-lg leading-relaxed text-white/80 sm:text-xl">
-            اختار القطع اللي تعجبك من براندات معروفة، وإحنا نحسب السعر بالوزن.
+            اختار القطع اللي تعجبك من براندات معروفة، وإحنا هنحسب السعر بالوزن.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
