@@ -73,3 +73,10 @@ export const PlusIcon = (p: IconProps) => (
     <path d="M12 5v14M5 12h14" />
   </Icon>
 );
+
+/** Facebook brand glyph. Filled, unlike the stroked UI icons above. */
+export const FacebookIcon = (p: IconProps) => (
+  <Icon fill="currentColor" stroke="none" {...p}>
+    <path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9Z" />
+  </Icon>
+);

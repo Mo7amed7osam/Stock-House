@@ -14,6 +14,7 @@ export function JsonLd() {
       description: site.description,
       ...(site.hasFinalUrl ? { url: abs("/") } : {}),
       image: abs(images.og),
+      sameAs: [site.facebookUrl],
       logo: abs(logos.primaryGoldField),
       telephone: b.phoneE164,
       hasMap: b.mapUrl,

@@ -1,5 +1,6 @@
-import { branches, navItems } from "@/data/site";
+import { branches, navItems, site } from "@/data/site";
 import { CopyrightYear } from "./CopyrightYear";
+import { FacebookIcon } from "./icons";
 import { Logo } from "./Logo";
 import { Latin, externalLinkProps } from "./ui";
 import { WorkingHours } from "./WorkingHours";
@@ -20,6 +21,15 @@ export function Footer() {
             <p className="mt-4 text-xs font-bold tracking-[0.2em] text-gold">
               <Latin>BIG BRANDS. SMART PRICES.</Latin>
             </p>
+            <a
+              href={site.facebookUrl}
+              aria-label="صفحة STOCK HOUSE على فيسبوك"
+              className={`mt-6 gap-2 ${linkClass}`}
+              {...externalLinkProps}
+            >
+              <FacebookIcon width={22} height={22} />
+              <span className="text-sm">تابعنا على فيسبوك</span>
+            </a>
           </div>
 
           <nav aria-label="روابط الفوتر" className="lg:col-span-2">

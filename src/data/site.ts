@@ -100,12 +100,13 @@ export const site = {
   title: "STOCK HOUSE | ماركات كبيرة بأسعار أذكى",
   description:
     "اكتشف اختيارات رجالي وحريمي وأطفال من براندات معروفة في STOCK HOUSE. اختار القطع اللي تعجبك والسعر يتحسب بالوزن. زور فرع الهرم – اللبيني أو فرع المقطم.",
+  /** Official STOCK HOUSE Facebook page. */
+  facebookUrl: "https://www.facebook.com/profile.php?id=61554164577428",
   /**
-   * SOCIAL_FOLLOW_URL_PLACEHOLDER — no verified Instagram/Facebook URL yet.
-   * While null, "تابع أحدث الدروبات" points to the branches section,
-   * where the verified WhatsApp groups live.
+   * Destination of "تابع أحدث الدروبات". When null, it falls back to the
+   * branches section, where the verified WhatsApp groups live.
    */
-  socialFollowUrl: null as string | null,
+  socialFollowUrl: "https://www.facebook.com/profile.php?id=61554164577428" as string | null,
 } as const;
 
 export const logos = {
